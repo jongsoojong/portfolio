@@ -1,0 +1,31 @@
+/* =============== About =================*/
+
+.about {
+
+}
+
+.about__title {
+    font-size: $font-large;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: $secondary-color;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.about__bio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: spacing(extra-tight);
+}
+
+.about__bio-image {
+    border-radius: 50%;
+}
+
+.about__bio-description {
+    padding-left: spacing();
+    font-size: $font-medium;
+}

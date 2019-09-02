@@ -3,6 +3,7 @@ import { ReactComponent as Github } from '../assets/icons/github-sign.svg';
 import { ReactComponent as LinkedIn } from '../assets/icons/linkedin-logo.svg';
 import { ReactComponent as Instagram } from '../assets/icons/instagram.svg';
 import { ReactComponent as Email } from '../assets/icons/close-envelope.svg';
+import { ReactComponent as CV } from '../assets/icons/cv.svg';
 
 export class Footer extends Component {
     render() {
@@ -22,6 +23,11 @@ export class Footer extends Component {
                     <li className="footer__button">
                         <a href="">
                             <Instagram />   
+                        </a>
+                    </li>
+                    <li className="footer__button">
+                        <a href="">
+                            <CV />    
                         </a>
                     </li>
                     <li className="footer__button">

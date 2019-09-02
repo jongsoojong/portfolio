@@ -3,6 +3,7 @@ import About from './About';
 import Skills from './Skills'
 import Work from './Work';
 import Projects from './Projects';
+import Contact from './Contact';
 
 
 export class Content extends Component {
@@ -13,6 +14,7 @@ export class Content extends Component {
                 <Skills />
                 <Work />
                 <Projects />
+                <Contact />
             </div>
         )
     }
