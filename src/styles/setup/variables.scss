@@ -1,0 +1,22 @@
+/* =============== Variables =================*/
+
+
+/* =============== Color =================*/
+$primary-color :#df7116;
+$secondary-color: #000000;
+$tertiary-color: #ffffff;
+
+
+/*================ Spacing ================*/
+
+$spacing-unit: 40px;
+
+$spacing-data: (
+  'super-tight' round($spacing-unit*0.25),
+  'extra-tight' round($spacing-unit*0.5),
+  'tight' round($spacing-unit*0.75),
+  'base' $spacing-unit,
+  'loose' round($spacing-unit*1.5),
+  'extra-loose' $spacing-unit*2
+  'super-loose' $spacing-unit*4
+);

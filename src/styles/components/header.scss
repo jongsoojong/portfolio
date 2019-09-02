@@ -1,0 +1,21 @@
+/* =============== Header =================*/
+
+.header {
+    padding: spacing() spacing(extra-tight);
+    background-color: $primary-color;
+}
+
+.header__buttons {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+.header__button {
+    color: $tertiary-color;
+    margin-left: 40px;
+    a {
+        text-decoration: none;
+        color: $tertiary-color;
+    }
+}
