@@ -2,11 +2,24 @@ import React, { Component } from 'react';
 import { jsxOpeningElement } from '@babel/types';
 
 class Header extends Component {
-    header = document.getElementsByClassName('header');
-    sticky = this.header.offsetTop;
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+
+        this.handleScroll = this.handleScroll;
+    }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
+        const el = document.querySelector('nav');
+        this.setState({top: el.offsetTop, height: el.offsetHeight})
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentDidUpdate() {
+        this.state.scroll > this.state.top ? 
+        document.body.style.paddingTop = `${this.state.height}px` :
+        document.body.style.paddingTop = 0;
     }
     
     componentWillUnmount() {
@@ -14,19 +27,12 @@ class Header extends Component {
     }
 
     handleScroll = () => {
-        if (window.pageYOffset > this.sticky) {
-            console.log('greater-than')
-        } else {
-            console.log(window.pageYOffset);
-            console.log(this.header.offsetTop)
-            console.log(this.header)
-            console.log('less-than')
-        }
+        this.setState({scroll: window.scrollY});
     }
 
     render() {
         return (
-            <nav className="header">
+            <nav className={this.state.scroll > this.state.top ? "header header--sticky" : "header"}>
                 <ul className="header__buttons">
                     <li className="header__button"><a href="#intro">About</a></li>
                     <li className="header__button"><a href="#skills">Skills</a></li>
