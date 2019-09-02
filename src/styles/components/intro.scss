@@ -1,0 +1,26 @@
+/* =============== Introduction =================*/
+
+.intro {
+    width: 100%;
+    background-color: $secondary-color;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro__title {
+    color: $tertiary-color;
+    margin: 0;
+    width: 100%;
+    text-align: center;   
+}
+
+.intro__btn {
+    border: none;
+    background: $primary-color;
+    color: $tertiary-color;
+    margin: spacing() auto;
+    padding: spacing(extra-tight) spacing();
+    display: block;
+}

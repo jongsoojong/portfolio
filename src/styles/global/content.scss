@@ -1,0 +1,14 @@
+.content-section {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: spacing(extra-loose) spacing(extra-tight)
+}
+
+.content-container {
+    width: 100%;
+
+    &:nth-child(even) {
+        background-color: #f5f5f5;
+    }
+}
+

@@ -1,0 +1,36 @@
+/* =============== Header =================*/
+
+.footer {
+    padding: spacing(extra-tight) spacing(super-tight);
+    background-color: $primary-color;
+    z-index: 1;
+    width: 100%;
+}
+
+.footer__buttons {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer__button {
+    color: $tertiary-color;
+    margin: spacing(extra-tight);
+    width: rem(50px);
+    height: rem(50px);
+    svg {
+        fill: $tertiary-color;
+        width: rem(50px);
+        height: rem(50px);
+    }
+}
+
+.jongsooyoon {
+    width: 100%;
+    text-align: center;
+    color: $tertiary-color;
+    margin: spacing(extra-tight) 0;
+}

@@ -1,19 +1,30 @@
 /* =============== Header =================*/
 
 .header {
-    padding: spacing() spacing(extra-tight);
+    padding: spacing(extra-tight) spacing(super-tight);
     background-color: $primary-color;
+    z-index: 2;
+    width: 100%;
+}
+
+.header--sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
 }
 
 .header__buttons {
     display: flex;
     list-style: none;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    max-width: 1280px;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .header__button {
     color: $tertiary-color;
-    margin-left: 40px;
+    margin-right: spacing(extra-tight);
     a {
         text-decoration: none;
         color: $tertiary-color;
