@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 
-export class Work extends Component {
-    render() {
-        return (
-            <div className="content-container">
-                <div className="work content-section">
-                    EXPERIENCE
-                </div>
+export default function Work() {
+    return (
+        <div className="content-container">
+            <div className="work content-section">
+                EXPERIENCE
             </div>
-        )
-    }
+        </div>
+    )
 }
 
-export default Work

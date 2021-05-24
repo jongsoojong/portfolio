@@ -4,28 +4,33 @@
 
 }
 
-.about__title {
-    font-size: $font-large;
-    text-decoration: underline;
-    text-transform: uppercase;
-    color: $secondary-color;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-}
-
 .about__bio {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin-top: spacing(extra-tight);
+}
+
+.about__bio-image__container {
+    width: 40%
 }
 
 .about__bio-image {
+    display: block;
+    margin: 0 auto;
     border-radius: 50%;
 }
 
+.about__bio-intro {
+}
+
+.about__bio-title {
+    text-align: center;
+}
+
+.about__bio-excerpt {
+    text-align: center;
+}
+
 .about__bio-description {
-    padding-left: spacing();
-    font-size: $font-medium;
+    width: 60%;
 }
