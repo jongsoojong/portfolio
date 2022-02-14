@@ -1,0 +1,26 @@
+/* =============== Skills =================*/
+
+.skills__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill__icon-container {
+    flex: 1 1 30%;
+    margin: spacing(extra-tight) 0;
+
+    @media screen and (min-width: 1024px) {
+        flex: 1;
+        margin: 0;
+    }
+
+}
+
+.skill__icon {
+    padding: 0 spacing(extra-tight);
+    @media screen and (min-width: 1024px) {
+        padding: 0 spacing(tight);
+    }
+}

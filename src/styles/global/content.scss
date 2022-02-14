@@ -1,3 +1,7 @@
+.App {
+    overflow: hidden;
+}
+
 .content-section {
     max-width: 1024px;
     margin: 0 auto;
@@ -12,3 +16,21 @@
     }
 }
 
+.content__title {
+    font-size: $font-large;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: $secondary-color;
+    width: 100%;
+    margin: 0 0 spacing() 0;
+    text-align: center;
+}
+
+.content__subtitle {
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}

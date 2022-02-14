@@ -4,20 +4,18 @@ import Skills from './Skills'
 import Work from './Work';
 import Projects from './Projects';
 import Contact from './Contact';
+import Example from './react-hook-example';
 
 
-export class Content extends Component {
-    render() {
+export default function Content() {
         return (
             <div className='content'>
-                <About />
-                <Skills />
-                <Work />
+                { About() }
+                { Skills() }
+                { Work() }}
                 <Projects />
                 <Contact />
+                { Example() }
             </div>
         )
-    }
 }
-
-export default Content
