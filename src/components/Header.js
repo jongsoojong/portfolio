@@ -1,48 +1,49 @@
-import React, { Component } from 'react';
-import { jsxOpeningElement } from '@babel/types';
+import React, {useState, useEffect, useCallback} from 'react';
 
-class Header extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {};
+export const Header = () => {
+    const[scrollState, setScrollState] = useState(0);
+    const[topState, setTopState] = useState(0);
+    const[heightState, setHeightState] = useState(0);
 
-        this.handleScroll = this.handleScroll;
+    const goToSection = (thisSection) => {
+        let placeToScroll = document.querySelector('[data-section-name="' + thisSection +'"]')
+
+        window.scrollTo({
+            top: placeToScroll.offsetTop, 
+            behavior: 'smooth'
+        })
     }
 
-    componentDidMount() {
-        const el = document.querySelector('nav');
-        this.setState({top: el.offsetTop, height: el.offsetHeight})
-        window.addEventListener('scroll', this.handleScroll);
-    }
+    useEffect(() => {
+        const navigation = document.querySelector('nav');
+        setTopState(navigation.offsetTop);
+        setHeightState(navigation.offsetHeight);
+    }, [])
 
-    componentDidUpdate() {
-        this.state.scroll > this.state.top ? 
-        document.body.style.paddingTop = `${this.state.height}px` :
-        document.body.style.paddingTop = 0;
-    }
-    
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll)
-    }
+    const handleScroll = useCallback(() => {
+        setScrollState(window.scrollY)
+    }, [])
 
-    handleScroll = () => {
-        this.setState({scroll: window.scrollY});
-    }
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll)
+    }, [handleScroll])
 
-    render() {
-        return (
-            <nav className={this.state.scroll > this.state.top ? "header header--sticky" : "header"}>
-                <ul className="header__buttons">
-                    <li className="header__button"><a href="#intro">About</a></li>
-                    <li className="header__button"><a href="#skills">Skills</a></li>
-                    <li className="header__button"><a href="#work">Experience</a></li>
-                    <li className="header__button"><a href="#projects">Projects</a></li>
-                    <li className="header__button"><a href="#contact">Contact Me</a></li>
-                </ul>
-            </nav>
-        )
-    }
+    useEffect(() => {
+        scrollState > topState ? document.body.style.paddingTop = `${heightState}px` : document.body.style.paddingTop = 0;
+    }, [scrollState])
+
+    return (
+        <nav className={scrollState > topState ? "header header--sticky" : "header"}>
+            <ul className="header__buttons">
+                <li className="header__button"><a href="#about" onClick={ () => goToSection('about')}>About Me</a></li>
+                <li className="header__button"><a href="#skills" onClick={ () => goToSection('skills')}>My Skills</a></li>
+                <li className="header__button"><a href="#work" onClick={ () => goToSection('work')}>My Experience</a></li>
+                <li className="header__button"><a href="#projects" onClick={() => goToSection('projects')}>Projects</a></li>
+            </ul>
+        </nav>
+    )
 }
 
-export default Header;
+
+

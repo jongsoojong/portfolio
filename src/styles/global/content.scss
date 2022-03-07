@@ -1,5 +1,9 @@
 .App {
     overflow: hidden;
+
+    &.dark-mode {
+        $dark-mode: true;
+    }
 }
 
 .content-section {

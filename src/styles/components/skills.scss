@@ -3,24 +3,51 @@
 .skills__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .skill__icon-container {
-    flex: 1 1 30%;
+    flex: 0 1 30%;
     margin: spacing(extra-tight) 0;
+    position: relative;
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 768px) {
         flex: 1;
         margin: 0;
     }
 
+    &:hover {
+        .skill__icon-title {
+            display: block;
+        }
+    }
 }
 
 .skill__icon {
     padding: 0 spacing(extra-tight);
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 768px) {
         padding: 0 spacing(tight);
     }
+}
+
+.skill__icon-picture {
+    width: 100%;
+}
+
+.skill__icon-title {
+    text-align: center;
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    color: black;
+    padding: spacing(super-tight);
+    -webkit-text-stroke: 0.5px white;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
 }

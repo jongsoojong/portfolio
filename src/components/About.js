@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Jong from '../assets/images/Jong.jpeg'
 
-export default function About() {
+export const About = () => {
 
     const [age, setAge] = useState(0);
     let todayDate = new Date();
@@ -9,18 +9,17 @@ export default function About() {
 
     useEffect(()=> {
         setAge(todayYear - 1988);
-    })
+    }, [])
 
 
     return (
         <div className='content-container'>
-            <div className='about content-section'>
+            <div className='about content-section' data-section-name="about">
                 <h2 className='content__title'>About Me</h2>
                 <div className='about__content'>
                     <div className="about__bio">
                         <div className='about__bio-image__container'>
                             <img className='about__bio-image' src={Jong} alt='jongsooyoon' />
-         
                         </div>
                         <div className='about__bio-description'>
                             <div className='about__bio-intro'>

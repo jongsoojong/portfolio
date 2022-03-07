@@ -2,9 +2,17 @@
 
 
 /* =============== Color =================*/
+$dark-mode: false !default;
 $primary-color :#df7116;
 $secondary-color: #000000;
 $tertiary-color: #ffffff;
+
+@if $dark-mode {
+  $primary-color :#df7116;
+  $secondary-color: #ffffff;
+  $tertiary-color: #000000;
+}
+
 
 /*================ Font ================*/
 $font-small : rem(16px);
